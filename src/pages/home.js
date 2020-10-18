@@ -18,12 +18,14 @@ import Toast from 'components/toast';
 
 function Home() {
   // Context
-  const { onChangeSorting } = useContext(LinkListContext);
+  const { onChangeSorting, modal, onToggleModal, removeLinkItem, toastMessage } = useContext(LinkListContext);
+  const { isOpen, info } = modal;
 
   return (
     <Content>
-      <Modal />
-      <Toast />
+      {isOpen && <Modal isOpen={isOpen} onToggleModal={onToggleModal} removeLinkItem={removeLinkItem} info={info} />}
+
+      {toastMessage !== '' && <Toast message={toastMessage} />}
 
       <div className="flex justify-between">
         {/* Sorting */}

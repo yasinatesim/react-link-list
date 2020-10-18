@@ -35,10 +35,9 @@ function AddLink() {
   const { name, link } = state;
 
   // Context
-  const { addLinkItem } = useContext(LinkListContext);
+  const { addLinkItem, toastMessage } = useContext(LinkListContext);
 
   const handleChangeInput = (e, inputFieldsIsFill = false) => {
-    // eslint-disable-next-line
     const {
       target: { name, value },
     } = e;
@@ -66,7 +65,7 @@ function AddLink() {
 
   return (
     <Content>
-      <Toast />
+      {toastMessage !== '' && <Toast message={toastMessage} />}
 
       <Button to="/" extraClass="flex items-center mb-4">
         <Arrow />

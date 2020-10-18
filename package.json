@@ -21,7 +21,7 @@
     "watch:css": "postcss src/tailwind.css -o src/index.css -w",
     "start": "npm run build:css && react-scripts start",
     "build": "npm run purge:css && react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test -u",
     "test:coverage": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject",
     "lint": "eslint src --fix",

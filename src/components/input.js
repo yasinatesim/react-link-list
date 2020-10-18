@@ -7,8 +7,8 @@ import cls from 'classnames';
 const propTypes = {
   error: PropTypes.string,
   extraClass: PropTypes.string,
-  id: PropTypes.string,
-  label: PropTypes.string,
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
 };
 
 function Input({ error, extraClass, id, label, ...props }) {

@@ -65,8 +65,9 @@ function Pagination({ totalItems, currentPage, onChange }) {
             'outline-none focus:outline-none cursor-not-allowed text-gray-600': isFirstPage,
           })}
           onClick={() => !isFirstPage && onChange(currentPage - 1)}
-        />
-        <Chevron className="transform rotate-90" />
+        >
+          <Chevron className="transform rotate-90" />
+        </Button>
         {renderPageNumbers()}
 
         <Button

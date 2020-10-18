@@ -1,18 +1,17 @@
-import React, { useContext } from 'react';
-
-// Contexts
-import LinkListContext from 'contexts/link-list';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 // Containers
 import Content from 'containers/content';
 
-function Toast() {
-  // Context
-  const { toastMessage } = useContext(LinkListContext);
-  const { title, content } = toastMessage;
+const propTypes = {
+  message: PropTypes.object.isRequired,
+};
+
+function Toast({ message }) {
+  const { title, content } = message;
 
   return (
-    toastMessage !== '' && (
       <Content>
         <div className="absolute w-full z-10">
           <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
@@ -20,8 +19,9 @@ function Toast() {
           </div>
         </div>
       </Content>
-    )
   );
 }
+
+Toast.propTypes = propTypes;
 
 export default Toast;

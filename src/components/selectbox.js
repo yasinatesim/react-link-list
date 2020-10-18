@@ -12,10 +12,10 @@ const propTypes = {
   onSelected: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-      label: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+      value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+      label: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
       defaultSelected: PropTypes.bool,
-    }),
+    }).isRequired,
   ),
   placeholder: PropTypes.string,
 };
