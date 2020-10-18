@@ -31,7 +31,7 @@ function Home() {
             { value: 'most-voted', label: 'Most Voted (Z-A)' },
             { value: 'less-voted', label: 'Less Voted (A-Z)' },
           ]}
-          onSelected={(item) => onChangeSorting(item.value)}
+          onSelected={(item) => onChangeSorting(item)}
         />
 
         {/* Button */}

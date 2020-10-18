@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 // Utilities
 import cls from 'classnames';
 import { ClickAway } from 'utils';
+import Store from 'store2';
 
 const propTypes = {
   extraClass: PropTypes.string,
@@ -30,7 +31,11 @@ function Select({ extraClass, onSelected, options, placeholder, ...props }) {
   };
 
   useLayoutEffect(() => {
-    const option = options.find(item => {
+    const { sorting: sortingLS } = Store.get('link-list-app')
+      ? Store.get('link-list-app')
+      : { value: 'last-added', label: 'Last Added' };
+
+    const option = sortingLS || options.find((item) => {
       return item.defaultSelected === true;
     });
 
@@ -65,7 +70,8 @@ function Select({ extraClass, onSelected, options, placeholder, ...props }) {
                 key={value}
                 className={cls('py-2 px-4 cursor-pointer focus:outline-none flex w-full', {
                   'font-normal bg-white': !selected || selected.value !== value,
-                  'font-bold bg-gray-200': (defaultSelected && !selected && !selected.value) || (selected && selected.value === value),
+                  'font-bold bg-gray-200':
+                    (defaultSelected && !selected && !selected.value) || (selected && selected.value === value),
                 })}
                 onClick={() => onSelectOption({ value, label })}
               >

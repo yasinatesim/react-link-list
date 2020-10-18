@@ -11,11 +11,11 @@ const propTypes = {
 const LinkListContext = createContext({});
 
 export const LinkListProvider = ({ children }) => {
-  const { links: linksLS, pageNumber: pageNumberLS, sorting: sortingLS } = Store.get('link-list-app') ? Store.get('link-list-app') : {};
+  const { links: linksLS, pageNumber: pageNumberLS, sortingLS } = Store.get('link-list-app') ? Store.get('link-list-app') : {};
 
   const [links, setLinks] = useState(linksLS || []);
   const [pageNumber, setPageNumber] = useState(pageNumberLS || 1);
-  const [sorting, setSorting] = useState(sortingLS || 'last-added');
+  const [sorting, setSorting] = useState(sortingLS || {});
 
   const [toastMessage, setToastMessage] = useState('');
   const [modal, setModal] = useState({});
@@ -58,15 +58,15 @@ export const LinkListProvider = ({ children }) => {
     setLinks(newItems);
   };
 
-  const onChangeSorting = (optionValue) => {
-    setSorting(optionValue);
+  const onChangeSorting = (option) => {
+    setSorting({ ...option });
     setPageNumber(1);
 
     const newItems = links.sort((a, b) => {
-      if (optionValue === 'most-voted') {
+      if (option.value === 'most-voted') {
         return b.point - a.point;
       }
-      if (optionValue === 'less-voted') {
+      if (option.value === 'less-voted') {
         return a.point - b.point;
       }
 
