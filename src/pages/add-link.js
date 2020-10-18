@@ -1,5 +1,8 @@
 import React, { useContext, useReducer } from 'react';
 
+// Icons
+import { Arrow } from 'assets/icons';
+
 // Utilities
 import { UniqeId } from 'utils';
 
@@ -36,7 +39,9 @@ function AddLink() {
 
   const handleChangeInput = (e, inputFieldsIsFill = false) => {
     // eslint-disable-next-line
-    const { target: { name, value } } = e;
+    const {
+      target: { name, value },
+    } = e;
 
     if (inputFieldsIsFill) {
       return dispatch({ name: '', link: '' });
@@ -64,9 +69,7 @@ function AddLink() {
       <Toast />
 
       <Button to="/" extraClass="flex items-center mb-4">
-        <svg height={20} viewBox="0 0 64 64" width={20} className="transform rotate-90">
-          <path d="M32 8a2 2 0 00-2 2v39.899L15.448 34.621a2 2 0 00-2.897 2.758l16.62 17.449A3.973 3.973 0 0032 56c1.068 0 2.073-.416 2.862-1.207l16.586-17.414a2 2 0 00-2.896-2.758L34 49.963V10a2 2 0 00-2-2z" />
-        </svg>
+        <Arrow />
         <span className="ml-2">Return to list</span>
       </Button>
       <form onSubmit={handleSubmit}>
