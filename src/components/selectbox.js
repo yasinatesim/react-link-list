@@ -1,6 +1,9 @@
 import React, { useState, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 
+// Constants
+import { defaultSorting } from 'constants';
+
 // Utilities
 import cls from 'classnames';
 import { ClickAway } from 'utils';
@@ -32,9 +35,7 @@ function Select({ extraClass, onSelected, options, placeholder, ...props }) {
   };
 
   useLayoutEffect(() => {
-    const { sorting: sortingLS } = Store.get('link-list-app')
-      ? Store.get('link-list-app')
-      : { value: 'last-added', label: 'Last Added' };
+    const { sorting: sortingLS } = Store.get('link-list-app') ? Store.get('link-list-app') : defaultSorting;
 
     const option =
       sortingLS ||
