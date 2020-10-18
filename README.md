@@ -104,8 +104,6 @@ yarn install
 yarn start
 ```
 
-App is running to  [http://localhost:3000/](http://localhost:3000/)
-
 ### For Docker
 
 2. Change the directory
@@ -125,6 +123,8 @@ or
 ```bash
 yarn && docker-compose up --build
 ```
+
+App is running to  [http://localhost:3000/](http://localhost:3000/)
 
 **For Production Build**
 ```bash
