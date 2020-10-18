@@ -34,18 +34,18 @@ function Modal({ isOpen, onToggleModal, removeLinkItem, info }) {
                 {info && <div className="font-bold text-2xl">{info.name}</div>}
               </div>
             </div>
-            <div className="flex items-center justify-end p-6 border-t border-solid border-gray-300 rounded-b">
+            <div className="flex items-center justify-end mb-2 px-6 py-2 border-t border-solid border-gray-300 rounded-b">
               {info && (
                 <button
-                className="uppercase bg-green-500 text-white active:bg-green-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                type="button"
-                onClick={() => removeLinkItem(info)}
-              >
+                  className="uppercase bg-green-500 text-white mt-2 active:bg-green-600 font-bold uppercase text-sm  px-6 py-2 rounded outline-none focus:outline-none mr-1 mb-2"
+                  type="button"
+                  onClick={() => removeLinkItem(info)}
+                >
                   Ok
                 </button>
               )}
               <button
-                className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
+                className="text-white bg-red-500 hover:bg-red-600 mt-2 font-bold uppercase rounded px-6 py-2 text-sm outline-none focus:outline-none ml-1 mb-2"
                 type="button"
                 onClick={() => onToggleModal({ isOpen: false })}
               >

@@ -22,6 +22,7 @@ function AddLink() {
   const initialState = {
     name: '',
     link: '',
+    errors: {},
   };
 
   const reducer = (state, action) => {
@@ -33,7 +34,7 @@ function AddLink() {
 
   // Local State
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { name, link } = state;
+  const { name, link, errors } = state;
 
   // Context
   const { addLinkItem, toastMessage } = useContext(LinkListContext);
@@ -50,18 +51,43 @@ function AddLink() {
     return dispatch({ [name]: value });
   };
 
+  const handleValidation = () => {
+    const errors = {};
+    let formIsValid = true;
+
+    if (!name) {
+      formIsValid = false;
+      errors.name = 'Cannot be empty';
+    }
+
+    if (!link) {
+      formIsValid = false;
+      errors.link = 'Cannot be empty';
+    }
+
+    if (link && !(/^(ftp|http|https):\/\/[^ "]+$/.test(link))) {
+      formIsValid = false;
+      errors.link = 'Invalid URL';
+    }
+
+    dispatch({ errors });
+    return formIsValid;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    addLinkItem({
-      id: UniqeId(),
-      name,
-      link,
-      point: 0,
-      createdAt: Date.now(),
-    });
+    if (handleValidation()) {
+      addLinkItem({
+        id: UniqeId(),
+        name,
+        link,
+        point: 0,
+        createdAt: Date.now(),
+      });
 
-    return handleChangeInput(e, true);
+      return handleChangeInput(e, true);
+    }
   };
 
   return (
@@ -76,6 +102,7 @@ function AddLink() {
         <Input
           autoFocus
           name="name"
+          error={errors.name}
           value={name}
           id="name"
           label="Link Name"
@@ -86,6 +113,7 @@ function AddLink() {
 
         <Input
           name="link"
+          error={errors.link}
           value={link}
           id="link"
           label="Link URL"

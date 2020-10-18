@@ -18,9 +18,9 @@ function Input({ error, extraClass, id, label, ...props }) {
   });
 
   return (
-    <div className={extraClass}>
+    <div className={cls({ 'text-red-400': error } ,extraClass)}>
       <div className="flex justify-between mb-1">
-        <label className={cls('inline-block', { 'text-red-400': error })} htmlFor={id}>
+        <label className='inline-block' htmlFor={id}>
           {label}
         </label>
       </div>
