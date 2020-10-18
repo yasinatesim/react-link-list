@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import React, { useContext } from 'react';
 
 // Icons

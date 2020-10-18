@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 // Containers
 import LinkList from 'containers/link-list';
 
-describe('Content Containers', () => {
+describe('LinkList Containers', () => {
   test('Normal case', () => {
     render(
       <LinkList
