@@ -60,6 +60,7 @@ export const LinkListProvider = ({ children }) => {
 
   const onChangeSorting = (optionValue) => {
     setSorting(optionValue);
+    setPageNumber(1);
 
     const newItems = links.sort((a, b) => {
       if (optionValue === 'most-voted') {
