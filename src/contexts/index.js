@@ -9,11 +9,7 @@ const propTypes = {
 };
 
 function Contexts({ children }) {
-  return (
-    <LinkListProvider>
-      {children}
-    </LinkListProvider>
-  );
+  return <LinkListProvider>{children}</LinkListProvider>;
 }
 
 Contexts.propTypes = propTypes;

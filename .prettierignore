@@ -6,3 +6,4 @@ commitlint.config.js
 package.json
 *.md
 *.yaml
+src/index.css

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 // Icons
-import {Plus} from 'assets/icons';
+import { Plus } from 'assets/icons';
 
 // Contexts
 import LinkListContext from 'contexts/link-list';

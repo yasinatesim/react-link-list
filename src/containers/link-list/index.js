@@ -19,9 +19,7 @@ function LinkList() {
   const hasLinks = allLinks.length > 0;
 
   const renderNoResult = () => {
-    return !hasLinks && (
-      <div className="border p-4">Henüz link listesine ekleme yapmadınız.</div>
-    );
+    return !hasLinks && <div className="border p-4">Henüz link listesine ekleme yapmadınız.</div>;
   };
 
   return (

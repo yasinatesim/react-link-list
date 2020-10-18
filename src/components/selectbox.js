@@ -36,9 +36,11 @@ function Select({ extraClass, onSelected, options, placeholder, ...props }) {
       ? Store.get('link-list-app')
       : { value: 'last-added', label: 'Last Added' };
 
-    const option = sortingLS || options.find((item) => {
-      return item.defaultSelected === true;
-    });
+    const option =
+      sortingLS ||
+      options.find((item) => {
+        return item.defaultSelected === true;
+      });
 
     if (isMounted) onSelectOption(option);
 

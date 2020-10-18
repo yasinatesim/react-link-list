@@ -1,5 +1,5 @@
 {
-  "name": "react-post-list",
+  "name": "react-link-list",
   "version": "1.0.0",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -22,6 +22,7 @@
     "start": "npm run build:css && react-scripts start",
     "build": "npm run purge:css && react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject",
     "lint": "eslint src --fix",
     "format": "prettier --write ."

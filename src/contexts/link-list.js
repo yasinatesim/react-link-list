@@ -11,7 +11,9 @@ const propTypes = {
 const LinkListContext = createContext({});
 
 export const LinkListProvider = ({ children }) => {
-  const { links: linksLS, pageNumber: pageNumberLS, sortingLS } = Store.get('link-list-app') ? Store.get('link-list-app') : {};
+  const { links: linksLS, pageNumber: pageNumberLS, sortingLS } = Store.get('link-list-app')
+    ? Store.get('link-list-app')
+    : {};
 
   const [links, setLinks] = useState(linksLS || []);
   const [pageNumber, setPageNumber] = useState(pageNumberLS || 1);
