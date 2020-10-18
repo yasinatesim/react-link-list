@@ -65,7 +65,7 @@ function AddLink() {
       errors.link = 'Cannot be empty';
     }
 
-    if (link && !(/^(ftp|http|https):\/\/[^ "]+$/.test(link))) {
+    if (link && !/^(ftp|http|https):\/\/[^ "]+$/.test(link)) {
       formIsValid = false;
       errors.link = 'Invalid URL';
     }
@@ -88,6 +88,7 @@ function AddLink() {
 
       return handleChangeInput(e, true);
     }
+    return false;
   };
 
   return (

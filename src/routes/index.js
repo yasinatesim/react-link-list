@@ -19,7 +19,7 @@ function Routes({ children }) {
       <Switch>{children || routeMap}</Switch>
     </Router>
   );
-};
+}
 
 Routes.propTypes = propTypes;
 

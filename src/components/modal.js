@@ -9,7 +9,6 @@ const propTypes = {
 };
 
 function Modal({ isOpen, onToggleModal, removeLinkItem, info }) {
-
   return isOpen ? (
     <>
       <div

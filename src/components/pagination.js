@@ -58,26 +58,26 @@ function Pagination({ totalItems, currentPage, onChange }) {
   };
 
   return (
-      <div className="flex items-center justify-center w-full">
-        <Button
-          extraClass={cls({
-            'outline-none focus:outline-none cursor-not-allowed text-gray-600': isFirstPage,
-          })}
-          onClick={() => !isFirstPage && onChange(currentPage - 1)}
-        >
-          <Chevron className="transform rotate-90" />
-        </Button>
-        {renderPageNumbers()}
+    <div className="flex items-center justify-center w-full">
+      <Button
+        extraClass={cls({
+          'outline-none focus:outline-none cursor-not-allowed text-gray-600': isFirstPage,
+        })}
+        onClick={() => !isFirstPage && onChange(currentPage - 1)}
+      >
+        <Chevron className="transform rotate-90" />
+      </Button>
+      {renderPageNumbers()}
 
-        <Button
-          extraClass={cls({
-            'outline-none focus:outline-none cursor-not-allowed text-gray-600': isLastPage,
-          })}
-          onClick={() => !isLastPage && onChange(currentPage + 1)}
-        >
-          <Chevron className="transform -rotate-90" />
-        </Button>
-      </div>
+      <Button
+        extraClass={cls({
+          'outline-none focus:outline-none cursor-not-allowed text-gray-600': isLastPage,
+        })}
+        onClick={() => !isLastPage && onChange(currentPage + 1)}
+      >
+        <Chevron className="transform -rotate-90" />
+      </Button>
+    </div>
   );
 }
 

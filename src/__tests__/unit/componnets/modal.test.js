@@ -8,5 +8,4 @@ describe('Modal Component', () => {
   test('Required props', () => {
     render(<Modal isOpen={true} onToggleModal={({ isOpen }) => console.log(isOpen)} />);
   });
-
 });
