@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.list-item__remove-button {
+  display: none;
+  top: -13px;
+}
+
+.list-item:hover .list-item__remove-button {
+  display: inline-block;
+}
+
