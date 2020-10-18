@@ -18,7 +18,16 @@ import Toast from 'components/toast';
 
 function Home() {
   // Context
-  const { onChangeSorting, modal, onToggleModal, removeLinkItem, toastMessage } = useContext(LinkListContext);
+  const {
+    onChangeSorting,
+    modal,
+    onToggleModal,
+    removeLinkItem,
+    toastMessage,
+    links,
+    pageNumber,
+    onChangePageNumber,
+  } = useContext(LinkListContext);
   const { isOpen, info } = modal;
 
   return (
@@ -48,7 +57,7 @@ function Home() {
 
       {/* Link Lists */}
       <div className="mt-5">
-        <LinkList />
+        <LinkList links={links} pageNumber={pageNumber} onChangePageNumber={onChangePageNumber} />
       </div>
     </Content>
   );

@@ -1,22 +1,24 @@
-import React, { useContext } from 'react';
-
-// Contexts
-import LinkListContext from 'contexts/link-list';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 // Components
 import Pagination from 'components/pagination';
 
+// Local Component
 import LinkListItem from './components/link-list-item';
 
-function LinkList() {
-  // Context
-  const { links: allLinks, pageNumber, onChangePageNumber } = useContext(LinkListContext);
+const propTypes = {
+  links: PropTypes.array.isRequired,
+  pageNumber: PropTypes.number.isRequired,
+  onChangePageNumber: PropTypes.func.isRequired,
+};
 
+function LinkList({ links, pageNumber, onChangePageNumber }) {
   const currentListIndex = (pageNumber - 1) * 5;
-  const linksWithPagination = allLinks.slice(currentListIndex, currentListIndex + 5);
+  const linksWithPagination = links.slice(currentListIndex, currentListIndex + 5);
 
   // Constants
-  const hasLinks = allLinks.length > 0;
+  const hasLinks = links.length > 0;
 
   const renderNoResult = () => {
     return !hasLinks && <div className="border p-4">Henüz link listesine ekleme yapmadınız.</div>;
@@ -33,7 +35,7 @@ function LinkList() {
       {hasLinks && (
         <div className="mt-4">
           <Pagination
-            totalItems={allLinks.length}
+            totalItems={links.length}
             currentPage={pageNumber}
             onChange={(page) => onChangePageNumber(page)}
           />
@@ -42,5 +44,7 @@ function LinkList() {
     </>
   );
 }
+
+LinkList.propTypes = propTypes;
 
 export default LinkList;
