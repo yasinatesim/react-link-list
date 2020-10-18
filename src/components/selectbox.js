@@ -2,7 +2,7 @@ import React, { useState, useLayoutEffect } from 'react';
 import PropTypes from 'prop-types';
 
 // Constants
-import { defaultSorting } from 'constants';
+import { defaultSorting } from 'constants/index';
 
 // Utilities
 import cls from 'classnames';

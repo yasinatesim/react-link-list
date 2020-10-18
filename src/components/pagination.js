@@ -58,8 +58,7 @@ function Pagination({ totalItems, currentPage, onChange }) {
   };
 
   return (
-    <div className="flex items-center">
-      <div className="flex items-center">
+      <div className="flex items-center justify-center w-full">
         <Button
           extraClass={cls({
             'outline-none focus:outline-none cursor-not-allowed text-gray-600': isFirstPage,
@@ -79,7 +78,6 @@ function Pagination({ totalItems, currentPage, onChange }) {
           <Chevron className="transform -rotate-90" />
         </Button>
       </div>
-    </div>
   );
 }
 
