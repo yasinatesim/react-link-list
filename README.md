@@ -9,7 +9,7 @@
 <p align="center">This project was created to create a medium/large React project with React + Tailwind CSS, React Router, ContextAPI and Docker 😎</p>
 
   <p align="center">
-    · <a href="https://react-link-list.yasinatesim.vercel.app/">View Demo</a>
+    · <a href="https://react-link-list.yasinates.com/">View Demo</a>
   </p>
 </p>
 
